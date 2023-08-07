@@ -42,6 +42,7 @@ const PageOne = () => {
 
 export default PageOne;
 
+// tadi juga nyoba pake then tapi jadinya pake async/await
 // import React, { useState, useEffect } from 'react';
 // import TableComponent from './tablecomponent';
 
