@@ -3,21 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import "./loginform.css"
 
 const LoginForm = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        password: '',
-    });
-
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('')
     const navigate = useNavigate();
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value, });
-    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate(`/homepage?name=${formData.name}&password=${formData.password}`);
+        navigate(`/homepage?email=${email}&password=${password}`);
     };
 
     return (
@@ -29,8 +22,8 @@ const LoginForm = () => {
                     </div>
                     <div class='d-grid gap-2 col-6 mx-auto'>
                         <h1>Login</h1>
-                        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="username" />
-                        <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} placeholder="password" />
+                        <input type="text" id="email" name="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="user" />
+                        <input type="password" id="password" name="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="password" />
                         <div><button type="submit" class="btn btn-primary">Login</button></div>
                     </div>
                 </div>
