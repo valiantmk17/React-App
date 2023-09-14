@@ -7,14 +7,13 @@ const PageOne = () => {
 
   const columns = [
     { field: 'id', column: 'id' },
+    { field: 'name', column: 'name' },
     { field: 'email', column: 'email' },
-    { field: 'first_name', column: 'first name' },
-    { field: 'last_name', column: 'last name' },
   ];
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://reqres.in/api/users?page=2');
+      const response = await fetch('http://localhost:3000/users');
       const dataFromApi = await response.json();
       setData(dataFromApi.data);
       setLoading(false);
